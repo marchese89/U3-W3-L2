@@ -1,12 +1,12 @@
-import { GET_COMPANIES } from "../actions";
+import { GET_JOBS } from "../actions";
 
 const initialState = {
   content: [],
 };
 
-const companiesReducer = (state = initialState, action) => {
+const jobsReducer = (state = initialState, action) => {
   switch (action.type) {
-    case GET_COMPANIES:
+    case GET_JOBS:
       return {
         ...state,
         content: action.payload,
@@ -17,4 +17,4 @@ const companiesReducer = (state = initialState, action) => {
   }
 };
 
-export default companiesReducer;
+export default jobsReducer;

@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { Container, Row, Col, Form } from "react-bootstrap";
 import Job from "./Job";
-import { getCompaniesAction } from "../redux/actions";
+import { getJobsAction } from "../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
 
 const MainSearch = () => {
   const [query, setQuery] = useState("");
-  const companies = useSelector((state) => state.companies.content);
+  const jobs = useSelector((state) => state.jobs.content);
   const dispatch = useDispatch();
 
   const handleChange = (e) => {
@@ -15,7 +15,7 @@ const MainSearch = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    dispatch(getCompaniesAction(query));
+    dispatch(getJobsAction(query));
   };
 
   return (
@@ -32,7 +32,7 @@ const MainSearch = () => {
           </Form>
         </Col>
         <Col xs={10} className="mx-auto mb-5">
-          {companies.map((jobData) => (
+          {jobs.map((jobData) => (
             <Job key={jobData._id} data={jobData} />
           ))}
         </Col>
