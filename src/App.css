@@ -1,0 +1,16 @@
+.display-1 {
+  color: black;
+}
+a {
+  text-decoration: none;
+}
+.heart-icon {
+  transition: transform 0.4s;
+}
+.heart-icon:active {
+  transform: scale(1.5);
+}
+
+.fav {
+  color: #61dafb;
+}
